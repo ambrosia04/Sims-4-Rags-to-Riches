@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sims 4 Rags to Riches Generator</title>
+    <link rel="icon" type="image/png" href="customization/plumbob.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sims 4 Rags to Riches Generator</h1>
+
+        <div class="options-container">
+            <input type="checkbox" id="base-game-checkbox" checked>
+            <label for="base-game-checkbox">Add Base Game Methods</label>
+        </div>
+
+        <div class="packs-container">
+            <!-- Expansion Packs -->
+            <div class="pack-section">
+                <h2 class="collapsible-header">
+                    <span class="header-title">Expansion Packs</span>
+                    <div class="check-all-controls">
+                        <span class="check-all-btn">✓ All</span> | <span class="uncheck-all-btn">✗ None</span>
+                    </div>
+                    <span class="arrow">▶</span>
+                </h2>
+                <div class="pack-grid" id="expansion-packs"></div>
+            </div>
+
+            <!-- Game Packs -->
+            <div class="pack-section">
+                <h2 class="collapsible-header">
+                    <span class="header-title">Game Packs</span>
+                    <div class="check-all-controls">
+                        <span class="check-all-btn">✓ All</span> | <span class="uncheck-all-btn">✗ None</span>
+                    </div>
+                    <span class="arrow">▶</span>
+                </h2>
+                <div class="pack-grid" id="game-packs"></div>
+            </div>
+
+            <!-- Stuff Packs -->
+            <div class="pack-section">
+                <h2 class="collapsible-header">
+                    <span class="header-title">Stuff Packs</span>
+                    <div class="check-all-controls">
+                        <span class="check-all-btn">✓ All</span> | <span class="uncheck-all-btn">✗ None</span>
+                    </div>
+                    <span class="arrow">▶</span>
+                </h2>
+                <div class="pack-grid" id="stuff-packs"></div>
+            </div>
+
+            <!-- Kits -->
+            <div class="pack-section">
+                <h2 class="collapsible-header">
+                    <span class="header-title">Kits</span>
+                    <div class="check-all-controls">
+                        <span class="check-all-btn">✓ All</span> | <span class="uncheck-all-btn">✗ None</span>
+                    </div>
+                    <span class="arrow">▶</span>
+                </h2>
+                <div class="pack-grid" id="kits"></div>
+            </div>
+
+            <!-- Free Packs -->
+            <div class="pack-section">
+                <h2 class="collapsible-header">
+                    <span class="header-title">Free Packs</span>
+                    <div class="check-all-controls">
+                        <span class="check-all-btn">✓ All</span> | <span class="uncheck-all-btn">✗ None</span>
+                    </div>
+                    <span class="arrow">▶</span>
+                </h2>
+                <div class="pack-grid" id="free-packs"></div>
+            </div>
+        </div>
+
+        <!-- Number of Methods Selector -->
+        <div id="method-count-container">
+            <label>Number of Methods:</label>
+            <div class="method-count-selector">
+                <span class="num-option active">1</span>
+                <span class="num-option">2</span>
+                <span class="num-option">3</span>
+                <span class="num-option">4</span>
+                <span class="num-option">5</span>
+            </div>
+        </div>
+
+        <button id="generate-btn">Generate Challenge</button>
+        <div id="challenge-output">
+            <h2>Your Rags to Riches Methods:</h2>
+            <ul id="challenge-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
