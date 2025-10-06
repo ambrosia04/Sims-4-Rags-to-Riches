@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const packs = {
         expansions: [
             { name: "Get to Work", options: [{ name: "Retail Business", type: "skill" }, { name: "Baking", type: "skill" }, { name: "Photography", type: "skill" }, { name: "Scientist", type: "job" }, { name: "Doctor", type: "job" }, { name: "Detective", type: "job" }] },
-            { name: "Get Together", options: [{ name: "DJ", type: "skill" }, { name: "Dancing", type: "skill" }, { name: "Club Activities", type: "skill" }] },
+            { name: "Get Together", options: [{ name: "DJ", type: "skill" }, { name: "Club Activities", type: "skill" }] },
             { name: "City Living", options: [{ name: "Festivals", type: "skill" }, { name: "Singing", type: "skill" }, { name: "Social Media", type: "job" }, { name: "Critic", type: "job" }, { name: "Politician", type: "job" }] },
             { name: "Cats & Dogs", options: [{ name: "Veterinarian", type: "job" }, { name: "Pet Training", type: "skill" }, { name: "Cat Hunting", type: "skill"}, { name: "Dog Hunting", type: "skill"}] },
             { name: "Seasons", options: [{ name: "Gardener", type: "job" }, { name: "Flower Arranging", type: "skill" }, { name: "Scout", type: "job" }, { name: "Decor Box Rummage", type: "skill" }] },
-            { name: "Get Famous", options: [{ name: "Actor", type: "job" }, { name: "Media Production", type: "skill" }, { name: "Streaming", type: "skill" }] },
-            { name: "Island Living", options: [{ name: "Conservationist", type: "job" }, { name: "Diving", type: "skill" }, { name: "Odd Jobs", type: "skill" }] },
+            { name: "Get Famous", options: [{ name: "Actor", type: "job" }, { name: "Media Production", type: "skill" }, { name: "Streaming", type: "skill" }, { name: "Selling Celebrities autographs", type: "skill" }] },
+            { name: "Island Living", options: [{ name: "Conservationist", type: "job" }, { name: "Diving", type: "skill" }, { name: "Odd Jobs", type: "skill" }, { name: "Beach Combing", type: "skill" }] },
             { name: "Discover University", options: [{ name: "Education", type: "job" }, { name: "Engineering", type: "job" }, { name: "Law", type: "job" }, { name: "Soccer Player", type: "job" }, { name: "E-sports Competitor", type: "job" }] },
             { name: "Eco Lifestyle", options: [{ name: "Civil Designer", type: "job" }, { name: "Freelance Crafter", type: "skill" }, { name: "Fabrication", type: "skill" }, { name: "Candle Making", type: "skill" }, { name: "Dumpster Diving", type: "skill" }] },
             { name: "Snowy Escape", options: [{ name: "Salaryperson", type: "job" }, { name: "Rock Climbing", type: "skill" }, { name: "Skiing", type: "skill" }, { name: "Snowboarding", type: "skill" }] },
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "For Rent", options: [{ name: "Property Owner", type: "skill" }] },
             { name: "Lovestruck", options: [{ name: "Wedding Planner", type: "job" }, { name: "Relationship Guru", type: "skill" }] },
             { name: "Life & Death", options: [{ name: "Undertaker", type: "job" }, { name: "Ghost Hunter", type: "skill" }] },
-            { name: "Businesses & Hobbies", options: [{ name: "Running a business", type: "skill" }] },
+            { name: "Businesses & Hobbies", options: [{ name: "Running a business (only entrance fees, no sell/classes)", type: "skill" }, { name: "Running a business (only hourly fees, no sell/classes)", type: "skill" }, { name: "Running a business (no entrance fee, only sell/classes)", type: "skill" }, { name: "Running a business (only classes, no entrance fee)", type: "skill" }, { name: "Running a business (only sell things, no entrance fee)", type: "skill" }] },
             { name: "Enchanted by Nature", options: [{ name: "Fairy Activities", type: "skill" }] },
-            { name: "Adventure Awaits", options: [{ name: "Archaeology", type: "skill" }, { name: "Exploring", type: "skill" }] }
+            { name: "Adventure Awaits", options: [{ name: "Archaeology", type: "skill" }, { name: "Exploring", type: "skill" }, { name: "Sell paper crafts", type: "skill" }, { name: "Host Getaways", type: "skill" }] }
         ],
         gamePacks: [
             { name: "Outdoor Retreat", options: [{ name: "Herbalism", type: "skill" }] },
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Gardening", type: "skill" }, { name: "Foraging", type: "skill" }, { name: "Collecting", type: "skill" }, 
         { name: "Writing", type: "skill" }, { name: "Painting", type: "skill" }, { name: "Programming", type: "skill" }, 
         { name: "Woodworking", type: "skill" }, { name: "Comedy", type: "skill" }, { name: "Mischief", type: "skill" }, 
-        { name: "Stealing (Kleptomaniac trait)", type: "skill" },
+        { name: "Stealing (Kleptomaniac trait)", type: "skill" }, { name: "Paid Mentoring", type: "skill" },
         { name: "Astronaut", type: "job" }, { name: "Athlete", type: "job" }, { name: "Business", type: "job" }, 
         { name: "Criminal", type: "job" }, { name: "Culinary", type: "job" }, { name: "Entertainer", type: "job" }, 
         { name: "Painter", type: "job" }, { name: "Secret Agent", type: "job" }, { name: "Style Influencer", type: "job" }, 
