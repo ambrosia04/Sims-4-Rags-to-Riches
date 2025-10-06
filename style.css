@@ -32,13 +32,21 @@ h1 {
     color: var(--sims-green-dark);
 }
 
+/* --- UPDATED: Checkbox Styles --- */
 .options-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     margin: 15px 0 20px 0;
-    gap: 8px;
+    gap: 20px; /* Increased gap */
     font-size: 16px;
+}
+
+.options-container > div {
+    display: flex; /* Aligns checkbox and label */
+    align-items: center;
+    gap: 8px;
 }
 
 .options-container label {
@@ -47,14 +55,14 @@ h1 {
     cursor: pointer;
 }
 
-#base-game-checkbox {
+.options-container input[type="checkbox"] {
     width: 18px;
     height: 18px;
     accent-color: var(--sims-green);
     cursor: pointer;
 }
 
-/* --- Collapsible Styles (UPDATED) --- */
+/* --- Collapsible Styles --- */
 .pack-section {
     margin-bottom: 10px;
 }
@@ -79,10 +87,9 @@ h1 {
 }
 
 .header-title {
-    flex-grow: 1; /* Pushes controls to the right */
+    flex-grow: 1;
 }
 
-/* --- NEW: Check/Uncheck Styles --- */
 .check-all-controls {
     font-size: 13px;
     font-weight: bold;

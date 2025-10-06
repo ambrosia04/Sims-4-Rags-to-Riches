@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // UPDATED DATA
     const packs = {
         expansions: [
             { name: "Get to Work", options: [{ name: "Retail Business", type: "skill" }, { name: "Baking", type: "skill" }, { name: "Photography", type: "skill" }, { name: "Scientist", type: "job" }, { name: "Doctor", type: "job" }, { name: "Detective", type: "job" }] },
@@ -152,6 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const generateBtn = document.getElementById('generate-btn');
     const challengeList = document.getElementById('challenge-list');
     const baseGameCheckbox = document.getElementById('base-game-checkbox');
+    // --- NEW: Get references to new checkboxes ---
+    const noJobsCheckbox = document.getElementById('no-jobs-checkbox');
+    const noGardeningPaintingCheckbox = document.getElementById('no-gardening-painting-checkbox');
 
     generateBtn.addEventListener('click', () => {
         let availableOptions = [];
@@ -170,6 +174,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // --- NEW: Apply filters based on checkboxes ---
+        if (noJobsCheckbox.checked) {
+            availableOptions = availableOptions.filter(opt => opt.type !== 'job');
+        }
+        if (noGardeningPaintingCheckbox.checked) {
+            availableOptions = availableOptions.filter(opt => opt.name !== 'Gardening' && opt.name !== 'Painting');
+        }
+
         const availableJobs = availableOptions.filter(opt => opt.type === 'job');
         const availableSkills = availableOptions.filter(opt => opt.type === 'skill');
 
@@ -181,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const pickAJob = Math.random() > 0.3;
         let jobPicked = false;
 
+        // The "No Jobs" checkbox is already handled, so this logic can stay
         if (pickAJob && availableJobs.length > 0 && desiredCount > 0) {
             const randomJobIndex = Math.floor(Math.random() * availableJobs.length);
             selectedOptions.push(availableJobs[randomJobIndex]);
@@ -207,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         } else {
             const li = document.createElement('li');
-            li.textContent = 'No methods available. Check the "Add Base Game Methods" box or select some packs!';
+            li.textContent = 'No methods available. Check your filters or select some packs!';
             challengeList.appendChild(li);
         }
     });
@@ -238,10 +251,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- NEW: Check/Uncheck All Logic ---
     document.querySelectorAll('.check-all-btn').forEach(button => {
         button.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevents the section from collapsing
+            event.stopPropagation();
             const packGrid = this.closest('.pack-section').querySelector('.pack-grid');
             packGrid.querySelectorAll('.pack').forEach(pack => pack.classList.add('selected'));
         });
@@ -249,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.uncheck-all-btn').forEach(button => {
         button.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevents the section from collapsing
+            event.stopPropagation();
             const packGrid = this.closest('.pack-section').querySelector('.pack-grid');
             packGrid.querySelectorAll('.pack').forEach(pack => pack.classList.remove('selected'));
         });
