@@ -1,39 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
     const packs = {
         expansions: [
-            { name: "Get to Work", options: [{ name: "Retail Business", type: "skill" }, { name: "Baking", type: "skill" }, { name: "Photography", type: "skill" }, { name: "Scientist", type: "job" }, { name: "Doctor", type: "job" }, { name: "Detective", type: "job" }] },
+            { name: "Get to Work", options: [{ name: "Retail Owner", type: "skill" }, { name: "Baking", type: "skill" }, { name: "Freelance Photographer", type: "skill" }, { name: "Scientist", type: "job" }, { name: "Doctor", type: "job" }, { name: "Detective", type: "job" }] },
             { name: "Get Together", options: [{ name: "DJ", type: "skill" }, { name: "Club Activities", type: "skill" }] },
-            { name: "City Living", options: [{ name: "Festivals", type: "skill" }, { name: "Singing", type: "skill" }, { name: "Playing Guitar for tips", type: "skill" }, { name: "Playing Piano for tips", type: "skill" }, { name: "Playing Violin for tips", type: "skill" }, { name: "Social Media", type: "job" }, { name: "Critic", type: "job" }, { name: "Politician", type: "job" }] },
-            { name: "Cats & Dogs", options: [{ name: "Veterinarian", type: "job" }, { name: "Pet Training", type: "skill" }, { name: "Cat Hunting", type: "skill"}, { name: "Dog Hunting", type: "skill"}] },
-            { name: "Seasons", options: [{ name: "Gardener", type: "job" }, { name: "Flower Arranging", type: "skill" }, { name: "Scout", type: "job" }, { name: "Decor Box Rummage", type: "skill" }, { name: "Beekeeping", type: "skill" }] },
-            { name: "Get Famous", options: [{ name: "Actor", type: "job" }, { name: "Media Production", type: "skill" }, { name: "Streaming", type: "skill" }, { name: "Selling Celebrities autographs", type: "skill" }] },
-            { name: "Island Living", options: [{ name: "Conservationist", type: "job" }, { name: "Diving", type: "skill" }, { name: "Odd Jobs", type: "skill" }, { name: "Beach Combing", type: "skill" }, { name: "Diver", type: "job" }, { name: "Fisherman", type: "job" }, { name: "Lifeguard", type: "job" }] },
-            { name: "Discover University", options: [{ name: "Education", type: "job" }, { name: "Engineering", type: "job" }, { name: "Law", type: "job" }, { name: "Soccer Player", type: "job" }, { name: "E-sports Competitor", type: "job" }] },
-            { name: "Eco Lifestyle", options: [{ name: "Civil Designer", type: "job" }, { name: "Freelance Crafter", type: "skill" }, { name: "Fabrication", type: "skill" }, { name: "Candle Making", type: "skill" }, { name: "Dumpster Diving", type: "skill" }] },
+            { name: "City Living", options: [{ name: "Festival Fanatic", type: "skill" }, { name: "Singing", type: "skill" }, { name: "Playing instruments for tips", type: "skill" }, { name: "Flea Market Flipper", type: "skill" }, { name: "Social Media", type: "job" }, { name: "Critic", type: "job" }, { name: "Politician", type: "job" }] },
+            { name: "Cats & Dogs", options: [{ name: "Veterinarian", type: "job" }, { name: "Cat Breeder (2 litters max)", type: "skill" }, { name: "Dog Breeder (2 litters max)", type: "skill" }, { name: "Animal Trainer (Cat Hunting)", type: "skill"}, { name: "Animal Trainer (Dog Hunting)", type: "skill"}] },
+            { name: "Seasons", options: [{ name: "Gardener", type: "job" }, { name: "Flower Arranger", type: "skill" }, { name: "Scout", type: "job" }, { name: "Decor Box Rummage", type: "skill" }, { name: "Bee Keeper", type: "skill" }] },
+            { name: "Get Famous", options: [{ name: "Actor", type: "job" }, { name: "Video Producer", type: "skill" }, { name: "Music Producer", type: "skill" }, { name: "Influencer", type: "skill" }, { name: "Autograph Appraiser", type: "skill" }] },
+            { name: "Island Living", options: [{ name: "Conservationist", type: "job" }, { name: "Diving", type: "skill" }, { name: "Odd Jobs", type: "skill" }, { name: "Beachcomber", type: "skill" }, { name: "Diver", type: "job" }, { name: "Fisherman", type: "job" }, { name: "Lifeguard", type: "job" }] },
+            { name: "Discover University", options: [{ name: "Bot-Bot Creator", type: "skill" }, { name: "Education", type: "job" }, { name: "Engineering", type: "job" }, { name: "Law", type: "job" }, { name: "Soccer Player", type: "job" }, { name: "E-sports Competitor", type: "job" }] },
+            { name: "Eco Lifestyle", options: [{ name: "Civil Designer", type: "job" }, { name: "Freelance Candle Maker", type: "skill" }, { name: "Freelance Decorator (Fabricator)", type: "skill" }, { name: "Freelance Drink Maker (Juice Fizzing)", type: "skill" }, { name: "Dumpster Diver", type: "skill" }] },
             { name: "Snowy Escape", options: [{ name: "Salaryperson", type: "job" }, { name: "Rock Climbing", type: "skill" }, { name: "Skiing", type: "skill" }, { name: "Snowboarding", type: "skill" }] },
-            { name: "Cottage Living", options: [{ name: "Farming", type: "skill" }, { name: "Canning", type: "skill" }, { name: "Animal Care (All animals)", type: "skill" }, { name: "Chicken farmer", type: "skill" }, { name: "Cow farmer", type: "skill" }, { name: "Llama farmer", type: "skill" }, { name: "Village Errands", type: "skill" }, { name: "Wild birds, rabbit and fox friend", type: "skill" }] },
-            { name: "High School Years", options: [{ name: "Simfluencer", type: "job" }, { name: "Video Game Streamer", type: "job" }, { name: "After-school activities", type: "skill" }, { name: "Trendi (capped to 10% what it costed you, 5% more each 20.000 simoleons)", type: "skill" }] },
+            { name: "Cottage Living", options: [{ name: "Farmer", type: "skill" }, { name: "Canning", type: "skill" }, { name: "Animal Care", type: "skill" }, { name: "Village Errands", type: "skill" }, { name: "Wild Animal Friend", type: "skill" }] },
+            { name: "High School Years", options: [{ name: "Simfluencer", type: "job" }, { name: "Video Game Streamer", type: "job" }, { name: "After-school activities", type: "skill" }, { name: "Fashion Designer (Trendi)", type: "skill" }] },
             { name: "Growing Together", options: [{ name: "Science Fairs", type: "skill" }, { name: "Sleepovers", type: "skill" }] },
-            { name: "Horse Ranch", options: [{ name: "Horse Breeding", type: "skill" }, { name: "Nectar Making", type: "skill" }, { name: "Goat/Sheep farmer", type: "skill" }] },
-            { name: "For Rent", options: [{ name: "Property Owner", type: "skill" }, { name: "Handyperson", type: "job" }] },
+            { name: "Horse Ranch", options: [{ name: "Equestrian (Competitions)", type: "skill" }, { name: "Nectar connoisseur", type: "skill" }, { name: "Mini-farmer (Goats/Sheep)", type: "skill" }, { name: "Community Job hopper", type: "skill" }] },
+            { name: "For Rent", options: [{ name: "Landlord", type: "skill" }, { name: "Seller of Secrets (Eavesdropping)", type: "skill" }, { name: "Burglar (Breaking & Entering)", type: "skill" }, { name: "Handyperson", type: "job" }] },
             { name: "Lovestruck", options: [{ name: "Wedding Planner", type: "job" }, { name: "Relationship Guru", type: "skill" }] },
-            { name: "Life & Death", options: [{ name: "Undertaker", type: "job" }, { name: "Reaper", type: "job" }, { name: "Ghost Hunter", type: "skill" }, { name: "Ghost Powers (Levitator)", type: "skill" }, { name: "Ghost Powers (Sell Fear and Goodwill essences)", type: "skill" }] },
-            { name: "Businesses & Hobbies", options: [{ name: "Running a business (only entrance fees, no sell/classes)", type: "skill" }, { name: "Running a business (only hourly fees, no sell/classes)", type: "skill" }, { name: "Running a business (no entrance fee, only sell/classes)", type: "skill" }, { name: "Running a business (only classes, no entrance fee)", type: "skill" }, { name: "Running a business (only sell things, no entrance fee)", type: "skill" }] },
-            { name: "Enchanted by Nature", options: [{ name: "Fairy Activities", type: "skill" }, { name: "Selling Elixirs", type: "skill" }, { name: "Naturopath", type: "job" }] },
-            { name: "Adventure Awaits", options: [{ name: "Archaeology", type: "skill" }, { name: "Exploring", type: "skill" }, { name: "Selling Butterflies", type: "skill" }, { name: "Sell paper crafts", type: "skill" }, { name: "Host Getaways", type: "skill" }, { name: "Archery", type: "skill" }] }
+            { name: "Life & Death", options: [{ name: "Tarot Reader", type: "skill" }, { name: "Spooky Explorer", type: "skill" }, { name: "Ghost Host", type: "skill" }, { name: "Undertaker", type: "job" }, { name: "Reaper", type: "job" }] },
+            { name: "Businesses & Hobbies", options: [{ name: "Tattoo Artist", type: "skill" }, { name: "Ceramics Artist/Potter", type: "skill" }, { name: "Sweet Shop/Confectioner", type: "skill" }, { name: "Master of Heists", type: "skill" }, { name: "Small Business Owner (Service/Activity)", type: "skill" }, { name: "Small Business Owner (Hospitality)", type: "skill" }, { name: "Small Business Owner (Mini Mall)", type: "skill" }] },
+            { name: "Enchanted by Nature", options: [{ name: "Forager", type: "skill" }, { name: "Apothecary", type: "skill" }, { name: "Natural Artist (Nature Press/Gnomes)", type: "skill" }, { name: "Naturopath", type: "job" }] },
+            { name: "Adventure Awaits", options: [{ name: "Archer", type: "skill" }, { name: "Entomologist", type: "skill" }, { name: "Papercrafter", type: "skill" }, { name: "Getaway Host", type: "skill" }, { name: "Getaway Contestant", type: "skill" }, { name: "Travel Blogger/Vlogger", type: "skill" }] }
         ],
         gamePacks: [
-            { name: "Outdoor Retreat", options: [{ name: "Herbalism", type: "skill" }] },
-            { name: "Spa Day", options: [{ name: "Wellness", type: "skill" }, { name: "Yoga Instructor", type: "skill" }] },
-            { name: "Dine Out", options: [{ name: "Restaurant Owner", type: "skill" }] },
+            { name: "Outdoor Retreat", options: [{ name: "Remedy Brewer (Herbalism)", type: "skill" }] },
+            { name: "Spa Day", options: [{ name: "Yoga/Meditation Instructor", type: "skill" }, { name: "Massage Therapist", type: "skill" }, { name: "Nail Technician", type: "skill" }] },
+            { name: "Dine Out", options: [{ name: "Restaurateur", type: "skill" }] },
             { name: "Vampires", options: [{ name: "Vampire Lore", type: "skill" }] },
             { name: "Parenthood", options: [{ name: "Character Value Rewards", type: "skill" }] },
-            { name: "Jungle Adventure", options: [{ name: "Archaeology", type: "skill" }, { name: "Selling Artifacts", type: "skill" }] },
-            { name: "StrangerVille", options: [{ name: "Military", type: "job" }] },
+            { name: "Jungle Adventure", options: [{ name: "Treasure Hunter (Temples)", type: "skill" }, { name: "Archaeologist (Excavation)", type: "skill" }] },
+            { name: "StrangerVille", options: [{ name: "Military", type: "job" }, { name: "Seller of Secrets (Spy Tool)", type: "skill" }] },
             { name: "Realm of Magic", options: [{ name: "Potion Making", type: "skill" }, { name: "Spellcasting", type: "skill" }] },
             { name: "Journey to Batuu", options: [{ name: "Batuu Missions", type: "skill" }] },
             { name: "Dream Home Decorator", options: [{ name: "Interior Decorator", type: "job" }] },
-            { name: "My Wedding Stories", options: [{ name: "Wedding Photography", type: "skill" }] },
+            { name: "My Wedding Stories", options: [{ name: "Wedding Cake Designer", type: "skill" }, { name: "Wedding Photography", type: "skill" }] },
             { name: "Werewolves", options: [{ name: "Scavenging", type: "skill" }, { name: "Wolf Pack Activities", type: "skill" }] }
         ],
         stuffPacks: [
@@ -44,26 +44,24 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Bowling Night Stuff", options: [{ name: "Bowling", type: "skill" }] },
             { name: "Fitness Stuff", options: [{ name: "Rock Climbing (wall)", type: "skill" }] },
             { name: "Moschino Stuff", options: [{ name: "Freelance Fashion Photographer", type: "job" }] },
-            { name: "Nifty Knitting Stuff", options: [{ name: "Knitting", type: "skill" }, { name: "Selling on Plopsy", type: "skill" }] },
+            { name: "Nifty Knitting Stuff", options: [{ name: "The Knitter", type: "skill" }, { name: "Selling on Plopsy", type: "skill" }] },
             { name: "Paranormal Stuff", options: [{ name: "Paranormal Investigator", type: "job" }] },
-            { name: "Home Chef Hustle Stuff", options: [{ name: "Food Stand", type: "skill" }] },
-            { name: "Crystal Creations Stuff", options: [{ name: "Jewelry Making", type: "skill" }] }
+            { name: "Home Chef Hustle Stuff", options: [{ name: "Cabbage Merchant (Food Stand)", type: "skill" }] },
+            { name: "Crystal Creations Stuff", options: [{ name: "Jewelry Maker", type: "skill" }, { name: "Crystal Farmer", type: "skill" }] }
         ],
         kits: [{ name: "Bust the Dust Kit", options: [{ name: "Cleaning for money", type: "skill" }, { name: "Sell Dust Bunny Gifts", type: "skill" }] }],
-        freePacks: [{ name: "Grim's Ghoulish Guitar Pack", options: [{ name: "Playing Guitar", type: "skill" }] }]
+        freePacks: [{ name: "Grim's Ghoulish Guitar Pack", options: [{ name: "Freelance Musician", type: "skill" }] }]
     };
 
     const baseGameOptions = [
-        { name: "Fishing", type: "skill" }, { name: "Cooking", type: "skill" }, { name: "Frog Breeding", type: "skill" }, 
-        { name: "Making Cupcakes", type: "skill" }, { name: "Hosting Social Events", type: "skill" }, { name: "Going on Dates", type: "skill" },
-        { name: "Gardening", type: "skill" }, { name: "Foraging", type: "skill" }, { name: "Collecting", type: "skill" }, 
-        { name: "Marry for Money", type: "skill" }, { name: "Asking for loans (level 7 and 9 charisma)", type: "skill" }, 
-        { name: "Writing", type: "skill" }, { name: "Painting", type: "skill" }, { name: "Programming", type: "skill" }, { name: "Hacking", type: "skill" },
-        { name: "Mixing Drinks", type: "skill" }, { name: "Exploring Space", type: "skill" }, { name: "Video Game Tournaments", type: "skill" },
-        { name: "Selling Guitar Songs", type: "skill" }, { name: "Selling Piano Songs", type: "skill" }, { name: "Selling Violin Songs", type: "skill" },
-        { name: "Selling Songs (any/all instruments)", type: "skill" },
-        { name: "Woodworking", type: "skill" }, { name: "Comedy", type: "skill" }, { name: "Mischief", type: "skill" }, { name: "Take and sell photos", type: "skill" }, 
-        { name: "Stealing (Kleptomaniac trait)", type: "skill" }, { name: "Paid Mentoring", type: "skill" }, { name: "Trash Can (NanoCan)", type: "skill" },
+        { name: "Freelance Painter", type: "skill" }, { name: "Freelance Author", type: "skill" }, { name: "Freelance Musician", type: "skill" }, 
+        { name: "Gardener", type: "skill" }, { name: "Fishersim", type: "skill" }, { name: "Collector", type: "skill" }, 
+        { name: "Carpenter", type: "skill" }, { name: "Freelance Comedian", type: "skill" }, { name: "Freelance Programmer", type: "skill" }, 
+        { name: "Space Explorer", type: "skill" }, { name: "Professional Gamer", type: "skill" }, { name: "Cybercriminal (Hacking)", type: "skill" },
+        { name: "Professional Host(ess)", type: "skill" }, { name: "Freelance Photographer", type: "skill" }, { name: "Cooking", type: "skill" }, 
+        { name: "Frog Breeding", type: "skill" }, { name: "Making Cupcakes", type: "skill" }, { name: "Going on Dates", type: "skill" },
+        { name: "Marry for Money", type: "skill" }, { name: "Asking for loans", type: "skill" }, { name: "Mixing Drinks", type: "skill" },
+        { name: "Burglar (Kleptomaniac Trait)", type: "skill" }, { name: "Paid Mentoring", type: "skill" }, { name: "Trash Can (NanoCan)", type: "skill" },
         { name: "Astronaut", type: "job" }, { name: "Athlete", type: "job" }, { name: "Business", type: "job" }, 
         { name: "Criminal", type: "job" }, { name: "Culinary", type: "job" }, { name: "Entertainer", type: "job" }, 
         { name: "Painter", type: "job" }, { name: "Secret Agent", type: "job" }, { name: "Style Influencer", type: "job" }, 
@@ -160,23 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const baseGameCheckbox = document.getElementById('base-game-checkbox');
     const noJobsCheckbox = document.getElementById('no-jobs-checkbox');
     const noGardeningPaintingCheckbox = document.getElementById('no-gardening-painting-checkbox');
-    // --- NEW: References for household generation ---
     const onlyAdultCheckbox = document.getElementById('only-adult-checkbox');
     const householdOutput = document.getElementById('household-output');
     const householdResult = document.getElementById('household-result');
 
     generateBtn.addEventListener('click', () => {
-        // --- NEW: Household Generation Logic ---
         const householdTypes = ['👤 Adult', '👤 Teenager', '👥 Teenager with toddler', '👥 Teenager with infant'];
         if (onlyAdultCheckbox.checked) {
-            householdOutput.style.display = 'none'; // Hide the section
+            householdOutput.style.display = 'none';
         } else {
-            householdOutput.style.display = 'block'; // Show the section
+            householdOutput.style.display = 'block';
             const randomIndex = Math.floor(Math.random() * householdTypes.length);
             householdResult.textContent = householdTypes[randomIndex];
         }
 
-        // --- Method Generation Logic (with filters) ---
         let availableOptions = [];
         if (baseGameCheckbox.checked) {
             availableOptions = [...baseGameOptions];
@@ -197,7 +192,10 @@ document.addEventListener('DOMContentLoaded', function() {
             availableOptions = availableOptions.filter(opt => opt.type !== 'job');
         }
         if (noGardeningPaintingCheckbox.checked) {
-            availableOptions = availableOptions.filter(opt => opt.name !== 'Gardening' && opt.name !== 'Painting' && opt.name !== 'Gardener');
+            availableOptions = availableOptions.filter(opt => 
+                opt.name !== 'Gardener' && opt.name !== 'Gardening' && 
+                opt.name !== 'Freelance Painter' && opt.name !== 'Painter'
+            );
         }
 
         const availableJobs = availableOptions.filter(opt => opt.type === 'job');
