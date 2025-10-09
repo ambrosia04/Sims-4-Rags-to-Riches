@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // UPDATED DATA
     const packs = {
         expansions: [
             { name: "Get to Work", options: [{ name: "Retail Business", type: "skill" }, { name: "Baking", type: "skill" }, { name: "Photography", type: "skill" }, { name: "Scientist", type: "job" }, { name: "Doctor", type: "job" }, { name: "Detective", type: "job" }] },
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Discover University", options: [{ name: "Education", type: "job" }, { name: "Engineering", type: "job" }, { name: "Law", type: "job" }, { name: "Soccer Player", type: "job" }, { name: "E-sports Competitor", type: "job" }] },
             { name: "Eco Lifestyle", options: [{ name: "Civil Designer", type: "job" }, { name: "Freelance Crafter", type: "skill" }, { name: "Fabrication", type: "skill" }, { name: "Candle Making", type: "skill" }, { name: "Dumpster Diving", type: "skill" }] },
             { name: "Snowy Escape", options: [{ name: "Salaryperson", type: "job" }, { name: "Rock Climbing", type: "skill" }, { name: "Skiing", type: "skill" }, { name: "Snowboarding", type: "skill" }] },
-            { name: "Cottage Living", options: [{ name: "Farming", type: "skill" }, { name: "Canning", type: "skill" }, { name: "Animal Care (All animals)", type: "skill" }, { name: "Chicken farmer", type: "skill" }, { name: "Cow farmer", type: "skill" }, { name: "Llama farmer", type: "skill" }, { name: "Village Errands", type: "skill" }] }, { name: "Wild birds, rabbit and fox friend", type: "skill" },
+            { name: "Cottage Living", options: [{ name: "Farming", type: "skill" }, { name: "Canning", type: "skill" }, { name: "Animal Care (All animals)", type: "skill" }, { name: "Chicken farmer", type: "skill" }, { name: "Cow farmer", type: "skill" }, { name: "Llama farmer", type: "skill" }, { name: "Village Errands", type: "skill" }, { name: "Wild birds, rabbit and fox friend", type: "skill" }] },
             { name: "High School Years", options: [{ name: "Simfluencer", type: "job" }, { name: "Video Game Streamer", type: "job" }, { name: "After-school activities", type: "skill" }, { name: "Trendi (capped to 10% what it costed you, 5% more each 20.000 simoleons)", type: "skill" }] },
             { name: "Growing Together", options: [{ name: "Science Fairs", type: "skill" }, { name: "Sleepovers", type: "skill" }] },
             { name: "Horse Ranch", options: [{ name: "Horse Breeding", type: "skill" }, { name: "Nectar Making", type: "skill" }, { name: "Goat/Sheep farmer", type: "skill" }] },
@@ -159,11 +158,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const generateBtn = document.getElementById('generate-btn');
     const challengeList = document.getElementById('challenge-list');
     const baseGameCheckbox = document.getElementById('base-game-checkbox');
-    // --- NEW: Get references to new checkboxes ---
     const noJobsCheckbox = document.getElementById('no-jobs-checkbox');
     const noGardeningPaintingCheckbox = document.getElementById('no-gardening-painting-checkbox');
+    // --- NEW: References for household generation ---
+    const onlyAdultCheckbox = document.getElementById('only-adult-checkbox');
+    const householdOutput = document.getElementById('household-output');
+    const householdResult = document.getElementById('household-result');
 
     generateBtn.addEventListener('click', () => {
+        // --- NEW: Household Generation Logic ---
+        const householdTypes = ['👤 Adult', '👤 Teenager', '👥 Teenager with toddler', '👥 Teenager with infant'];
+        if (onlyAdultCheckbox.checked) {
+            householdOutput.style.display = 'none'; // Hide the section
+        } else {
+            householdOutput.style.display = 'block'; // Show the section
+            const randomIndex = Math.floor(Math.random() * householdTypes.length);
+            householdResult.textContent = householdTypes[randomIndex];
+        }
+
+        // --- Method Generation Logic (with filters) ---
         let availableOptions = [];
         if (baseGameCheckbox.checked) {
             availableOptions = [...baseGameOptions];
@@ -180,12 +193,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // --- NEW: Apply filters based on checkboxes ---
         if (noJobsCheckbox.checked) {
             availableOptions = availableOptions.filter(opt => opt.type !== 'job');
         }
         if (noGardeningPaintingCheckbox.checked) {
-            availableOptions = availableOptions.filter(opt => opt.name !== 'Gardening' && opt.name !== 'Painting');
+            availableOptions = availableOptions.filter(opt => opt.name !== 'Gardening' && opt.name !== 'Painting' && opt.name !== 'Gardener');
         }
 
         const availableJobs = availableOptions.filter(opt => opt.type === 'job');
@@ -199,7 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const pickAJob = Math.random() > 0.3;
         let jobPicked = false;
 
-        // The "No Jobs" checkbox is already handled, so this logic can stay
         if (pickAJob && availableJobs.length > 0 && desiredCount > 0) {
             const randomJobIndex = Math.floor(Math.random() * availableJobs.length);
             selectedOptions.push(availableJobs[randomJobIndex]);
