@@ -32,13 +32,14 @@ h1 {
     color: var(--sims-green-dark);
 }
 
+/* --- UPDATED: Checkbox Styles for Responsiveness --- */
 .options-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 15px 0 20px 0;
-    gap: 20px;
+    flex-direction: column; /* Stack checkboxes vertically on mobile first */
+    align-items: flex-start; /* Left-align the stack */
+    width: fit-content; /* Make the container only as wide as its longest item */
+    margin: 15px auto 20px auto; /* Center the whole block */
+    gap: 10px; /* Adjust gap for vertical layout */
     font-size: 16px;
 }
 
@@ -61,7 +62,20 @@ h1 {
     cursor: pointer;
 }
 
-/* --- Collapsible Styles (UPDATED for responsiveness) --- */
+/* --- NEW: Media Query for larger screens (tablets and desktops) --- */
+@media (min-width: 768px) {
+    .options-container {
+        flex-direction: row; /* Go back to a horizontal layout */
+        justify-content: center; /* Center the items horizontally */
+        align-items: center;
+        flex-wrap: wrap;
+        width: auto; /* Allow it to take up more space */
+        gap: 20px; /* Use a wider gap for horizontal layout */
+    }
+}
+
+
+/* --- Collapsible Styles --- */
 .pack-section {
     margin-bottom: 10px;
 }
@@ -70,7 +84,7 @@ h1 {
     background-color: var(--light-green-bg);
     color: var(--sims-green-dark);
     cursor: pointer;
-    padding: 12px 18px; /* Adjusted padding */
+    padding: 12px 18px;
     border: 1px solid var(--border-color);
     text-align: left;
     outline: none;
@@ -78,8 +92,8 @@ h1 {
     border-radius: 5px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* --- ADDED: Allows items to wrap to a new line --- */
-    justify-content: space-between; /* --- ADDED: Helps space out items --- */
+    flex-wrap: wrap;
+    justify-content: space-between;
     transition: background-color 0.2s ease;
 }
 
@@ -88,17 +102,17 @@ h1 {
 }
 
 .header-title {
-    margin-right: 15px; /* Add some space between title and controls */
+    margin-right: 15px;
 }
 
 .check-all-controls {
     font-size: 13px;
     font-weight: bold;
     color: #888;
-    text-align: right; /* --- ADDED: Keeps it aligned to the right --- */
-    flex-grow: 1; /* Allows it to take up remaining space */
-    margin-top: 5px; /* Adds space when it wraps */
-    margin-bottom: 5px; /* Adds space when it wraps */
+    text-align: right;
+    flex-grow: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .check-all-btn, .uncheck-all-btn {
@@ -119,7 +133,7 @@ h1 {
 
 .collapsible-header .arrow {
     transition: transform 0.3s ease;
-    margin-left: 15px; /* Ensure space between controls and arrow */
+    margin-left: 15px;
 }
 
 .collapsible-header.active .arrow {
